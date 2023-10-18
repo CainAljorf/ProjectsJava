@@ -1,0 +1,39 @@
+package Ejercicios_Martes;
+import javax.swing.JOptionPane;
+
+public class test{
+
+	//N numeros, los numeros que tengan 3 divisores impares y sacar la media de los números ingresados. 9,25,49=27,6666
+	public static void main(String[] args){
+		int num1=0;
+		int num2=0;
+		int suma=0;
+		int cont=0;
+		int cont_media=0;
+		float media=0.0f;
+		String cad="";
+		num1=validators_v2.validator_int("¿Cúantos números deseas introducir? ","Introduce número");
+		for(int i=1;i<=num1;i++) {
+			num2=validators_v2.validator_int("Introduce un número: ","Introducir números");
+			for(int j=1;j<=num2;j++){
+				if((num2%j)==0){
+					if(cont==3){
+						suma+=num2;
+					}//end if
+					cont++;
+				}//end if
+			}//end for
+			if(cont_media==0) {
+				cad="Error de ejecución.";
+				cont_media++;
+			}else {
+				media=(float)suma/cont_media;
+			}//end if
+			System.out.println(cont_media);
+			System.out.println(suma);
+			cad="La media de los divisiores que tienen 3 números impares es "+media;
+		}//end for
+		JOptionPane.showMessageDialog(null, cad,"Resultado",JOptionPane.INFORMATION_MESSAGE);
+	}//end N_num_Div_Impar_Media
+	
+}

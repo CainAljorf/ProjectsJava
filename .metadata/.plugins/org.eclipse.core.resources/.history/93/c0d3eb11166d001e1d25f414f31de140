@@ -1,0 +1,33 @@
+package Ejercicios_Martes;
+
+import javax.swing.JOptionPane;
+
+public class test{
+
+	public static void main(String[] args){
+		int num1=0;
+		int num2=0;
+		int suma=0;
+		int cont=0;
+		int cont_media=0;
+		String cad="";
+		num1=validators_v2.validator_int("¿Cúantos números deseas introducir? ","Introduce número");
+		for(int i=1;i<=num1;i++) {
+			num2=validators_v2.validator_int("Introduce un número: ","Introducir números");
+			for(int j=1;j<=num2;j++){
+				if((num2%j)==1){
+					cont++;
+				}//end if
+				if(cont==3) {
+					suma+=num2;
+					cont_media++;
+				}//end if
+			}//end for
+			System.out.println(cont_media);
+			System.out.println(suma);
+			cad="La media de los divisiores que tienen 3 números impares es "+suma/cont_media;
+		}//end for
+		JOptionPane.showMessageDialog(null, cad,"Resultado",JOptionPane.INFORMATION_MESSAGE);
+	}//end N_num_Div_Impar_Media
+	
+}

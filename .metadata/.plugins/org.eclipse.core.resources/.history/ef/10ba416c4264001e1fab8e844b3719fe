@@ -1,0 +1,82 @@
+package exam_templates;
+import javax.swing.*;
+
+public class calculadora_basic {
+	public static void main(String[] args) {
+		
+		validar_int V=new validar_int();
+		case_menu C = new case_menu();
+		int menu,menu_sec;
+		int num1=0;
+		int num2=0;
+		int suma=0;
+		String[]tipo={"Sumar","Restar","Multiplicar","Dividir","Acabar"};
+		String[]tipo1={"Ejecutar","Volver Atrás","Salir"};
+		boolean validar=true;
+		
+		do{
+			menu=JOptionPane.showOptionDialog(null, "Pulse en el botones siguientes para realizar las operaciones.", "Calculadora",0, JOptionPane.QUESTION_MESSAGE,null ,tipo,tipo[0]);
+			switch(menu){
+				case 0:
+					C.Case(menu_sec);
+					break;
+				case 1:
+					do{
+						//funcion que recoge 2 nums, realiza e imprime la resta
+						
+						menu_sec=JOptionPane.showOptionDialog(null, "�Que desea hacer?", "continuar",0, JOptionPane.QUESTION_MESSAGE,null ,tipo1,tipo1[0]);
+						switch(menu_sec){
+							case 1:
+								validar=true;
+								break;
+							case 2:
+								validar=false;
+								break;
+							default:	
+								validar=false;
+						}
+					}while(menu_sec==0);	
+					break;
+				case 2:
+					do{
+						//funcion que recoge 2 nums, realiza e imprime la mult
+						
+						menu_sec=JOptionPane.showOptionDialog(null, "�Que desea hacer?", "continuar",0, JOptionPane.QUESTION_MESSAGE,null ,tipo1,tipo1[0]);
+						switch(menu_sec){
+							case 1:
+								validar=true;
+								break;
+							case 2:
+								validar=false;
+								break;
+							default:	
+								validar=false;
+						}
+					}while(menu_sec==0);	
+					break;
+				case 3:
+					do{
+						//funcion que recoge 2 nums, realiza e imprime la divisi�n
+						
+						menu_sec=JOptionPane.showOptionDialog(null, "�Que desea hacer?", "continuar",0, JOptionPane.QUESTION_MESSAGE,null ,tipo1,tipo1[0]);
+						switch(menu_sec){
+							case 1:
+								validar=true;
+								break;
+							case 2:
+								validar=false;
+								break;
+							default:	
+								validar=false;
+						}
+					}while(menu_sec==0);	
+					break;
+				case 4:
+					validar=false;
+					break;
+				default:	
+					validar=false;
+			}
+		}while(validar==true);
+	}
+}

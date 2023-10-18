@@ -1,0 +1,84 @@
+package Ejercicios_Martes;
+import javax.swing.JOptionPane;
+
+public class single_loop_v2 {
+	public static void N_numeros(){
+		int num=0;
+		int suma=0;
+		int cont=0;
+		int cont2=0;
+		float media=0.0f;
+		float res=0.0f;
+		String cad="";
+		num=validators_v2.validator_int("¿Cuántos números quieres introducir? ","Introducir número");
+		for(int i=1;i<=num;i++) {
+			res=divisores();
+		}//end for
+		cad="La media de los números que tienen 3 divisiores impares es "+res;
+		JOptionPane.showMessageDialog(null, cad,"Resultado",JOptionPane.INFORMATION_MESSAGE);
+		
+
+	}
+	public static void digitos() {
+		int num_copia=0,num=0,digito=0;
+		String cad,cad_dig="";
+		num=validators_v2.validator_int("Introduce un número: ","Introducir número");
+		num_copia=num;
+		while(num!=0) {
+			digito = num%10;
+			num=num/10;
+			cad_dig=cad_dig+"\n"+digito;
+		}//end while
+		cad="Los dígitos de "+num_copia+" son: "+cad_dig+"\n";
+		JOptionPane.showMessageDialog(null, cad,"Resultado",JOptionPane.INFORMATION_MESSAGE);
+	}//end digitos
+	public static float divisores(int suma,int cont,int cont2,float media) {
+		int num=0;
+		num=validators_v2.validator_int("Introduce un número: ","Introducir número");
+		cont=0;
+		for(int i=1;i<=num;i++) {
+			if((num%i)==0) {
+				cont++;
+				if(cont==3){
+					suma+=num;
+					cont2++;
+					System.out.println(suma);
+				}//end if
+			}//end if
+		}//end for
+		media=single_loop_v2.average(suma,cont2);
+		System.out.println(suma);
+		System.out.println(cont2);
+		return media;
+	}//end divisores
+	public static float average(float suma,int cont) {
+		float media=0.0f;
+		if (cont==0) {
+			media=0.0f;
+		}else {
+			media=(float)(suma/cont);
+		}//end if
+		return media;
+	}//end media
+	public static void mayor_menor() {
+		int cont=0;
+		int cont2=0;
+		int num=0;
+		int mayor=0;
+		int menor=0;
+		while(cont==5){
+			num=validators_v2.validator_int("Introduce un número: ","Introducir número");
+			cont++;
+			if (cont2==2){
+				num=mayor=menor;
+				cont2++;
+			}//end if
+			if(num<menor) {
+				menor=num;
+			}//end if
+			if(num>mayor) {
+				mayor=num;
+			}//end if
+		}//end while
+	}//end mayor_menor
+}//end class simple

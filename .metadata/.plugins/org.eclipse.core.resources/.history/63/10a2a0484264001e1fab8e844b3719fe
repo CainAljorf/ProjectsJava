@@ -1,0 +1,34 @@
+package exam_templates;
+
+import javax.swing.JOptionPane;
+
+public class case_menu {
+	public void Case (int menu_sec) {
+		int num1,num2,suma;
+		validar_int V=new validar_int();
+		boolean validar=true;
+		do{
+			switch(menu_sec){
+				case 0:
+					num1=V.valida_int();
+					num2=V.valida_int();
+					suma=num1+num2;
+					JOptionPane.showMessageDialog(null,"La suma de "+num1+" y "+num2+" es "+suma+".");
+					break;
+				case 1:
+					validar=true;
+					break;
+				case 2:
+					validar=false;
+					break;
+				default:	
+					validar=false;
+			}
+		}while(menu_sec==0);	
+		break;
+}
+
+
+
+
+	//funcion que recoge 2 nums, realiza e imprime la mult

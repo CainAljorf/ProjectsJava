@@ -1,0 +1,6 @@
+package objects;
+
+public class product {
+	private String ID;
+	private float price;
+}

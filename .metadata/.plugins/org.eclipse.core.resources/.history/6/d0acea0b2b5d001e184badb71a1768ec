@@ -1,0 +1,19 @@
+package exam_templates;
+
+public class digitos {
+
+	public static void main(String[] args) {
+		int num_copia=0,num=0,digito=0;
+		String cad="";
+		num_copia=num;
+		while(num!=0) {
+			digito = num%10;
+			num=num/10;
+			
+		}//end while
+		
+		cad="Los dígitos de "+num_copia+"son: "+digitos+". \n";
+	
+	}
+
+}

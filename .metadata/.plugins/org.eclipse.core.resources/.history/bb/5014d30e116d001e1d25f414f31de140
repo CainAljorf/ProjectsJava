@@ -1,0 +1,10 @@
+package Ejercicios_Martes;
+import javax.swing.JOptionPane;
+public class main_v1 {
+	public static void main(String[] args) {
+		menu_v1.menu_main();
+	}//end main
+}//end class main
+
+//N numeros, los numeros que tengan 3 divisores impares y sacar la media de los números ingresados.
+//Para los primeros 5 números impares, sacar de cada uno sacar la media de sus digitos múltiplos de 3.
