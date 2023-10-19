@@ -85,7 +85,7 @@ public class validators {
 					convert=true;
 				}//end if
 			}catch(Exception e){
-				JOptionPane.showMessageDialog(null, "No has introducido un número decimal.", "Error",JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null, "No has introducido un número decimal válido.", "Error",JOptionPane.ERROR_MESSAGE);
 				convert=false;
 			}//end try catch
 		}while(convert==false);
@@ -93,16 +93,16 @@ public class validators {
 	}//end validator_float
 	public static char validator_char(String message,String title) {
 		char character = 0;
-		String letra_input;
+		String char_input;
 		boolean convert=true;
 		do{
 			try{
-				letra_input=JOptionPane.showInputDialog(null, message,title,JOptionPane.QUESTION_MESSAGE);
-				if(letra_input==null){
+				char_input=JOptionPane.showInputDialog(null, message,title,JOptionPane.QUESTION_MESSAGE);
+				if(char_input==null){
 					JOptionPane.showMessageDialog(null, "Cerrando el programa.","Cerrar",JOptionPane.INFORMATION_MESSAGE);
 					System.exit(0);
 				}else {
-					character=letra_input.charAt(0);
+					character=char_input.charAt(0);
 					convert=true;
 				}//end if
 			}catch(Exception e){

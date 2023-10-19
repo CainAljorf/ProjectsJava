@@ -3,11 +3,18 @@ import javax.swing.JOptionPane;
 public class menu {
 	public static int menu_main() {
 		String[]buttons_main={
-				"Desea Continuar Media Pares",
-				"Interruptor Digitos Mayor Menor",
-				"Interruptor Mayor Menor Media",
-				"N Numeros Divisores",
-				"N Primeros Impares",
+				"1",
+				"2",
+				"3",
+				"4",
+				"5",
+				"6",
+				"7",
+				"8",
+				"9",
+				"10",
+				"11",
+				"12",
 				"Cerrar"};
 		int menu_main;
 		boolean validator=true;
@@ -38,6 +45,27 @@ public class menu {
 					menu_sec(menu_main);
 					break;
 				case 5:
+					menu_sec(menu_main);
+					break;
+				case 6:
+					menu_sec(menu_main);
+					break;
+				case 7:
+					menu_sec(menu_main);
+					break;
+				case 8:
+					menu_sec(menu_main);
+					break;
+				case 9:
+					menu_sec(menu_main);
+					break;
+				case 10:
+					menu_sec(menu_main);
+					break;
+				case 11:
+					menu_sec(menu_main);
+					break;
+				case 12:
 					validator=false;
 					break;
 				default:	
@@ -77,6 +105,27 @@ public class menu {
 							break;
 						case 4:
 							double_loop.N_Primeros_Impares();
+							break;
+						case 5:
+							double_loop.Digitos_Posicion();
+							break;
+						case 6:
+							double_loop.Interruptor_Mayor_Repeat();
+							break;
+						case 7:
+							double_loop.Perfecto_Primeros();
+							break;
+						case 8:
+							double_loop.DeseaContinuarMediaDivisoresImpares();
+							break;
+						case 9:
+							double_loop.Interruptor_2_Digitos_Impares();
+							break;
+						case 10:
+							double_loop.N_primeros_Digi_Multiplo_media();
+							break;
+						case 11:
+							double_loop.N_num_Div_Impar_Media();
 							break;
 					}//end switch
 					break;
