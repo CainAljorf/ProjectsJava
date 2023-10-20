@@ -1,33 +1,31 @@
 package library_functions_Cain;
 import javax.swing.JOptionPane;
 public class double_loop {
-	public static void DeseaContinuarMediaPares() {
+	public static void Continue_AVG_Even() {
 		int num1=0;
 		int sum=0;
 		int cont=0;
-		int next = 0;
-		float avg = 0.0f;
-		String str= "";
-		JOptionPane.showMessageDialog(null, "Escribe números hasta que quieras y te hará la media de los divisores pares que tenga.","Intrucciones",JOptionPane.INFORMATION_MESSAGE);
+		int next=0;
+		float avg=0.0f;
+		String str="";
+		JOptionPane.showMessageDialog(null, "Escribe números hasta que quieras y te hará la media de los pares.","Intrucciones",JOptionPane.INFORMATION_MESSAGE);
 		do{
 			num1=validators.validator_int("Introduce un número: ","Introducir número");
-			sum=0;
-			cont=0;
-			for(int i=1;i<=num1;i++) {
-				if((num1%i)==0){
-					if((i%2)==0){
-						sum = sum + num1;
-						cont++;
-					}//end if
-				}//end if
-			}//end for
+			if((num1%2)==0) {
+				sum = sum + num1;
+				cont++;
+				System.out.println(sum);
+				System.out.println(cont);
+			}//end if
 			next = JOptionPane.showConfirmDialog( null, "¿Desea introducir otro número?");
 		}while(JOptionPane.OK_OPTION == next);
+		System.out.println(sum);
+		System.out.println(cont);
 		avg=single_loop.average(sum, cont);
 		str="La media de los divisores es: "+avg;
 		JOptionPane.showMessageDialog(null, str,"Resultado",JOptionPane.INFORMATION_MESSAGE);
-	}//end DeseaContinuarMediaPares
-	public static void Interruptor_Digitos_Mayor_Menor(){
+	}//end Continue_AVG_Even
+	public static void Interrupt_Digit_Major_Minor(){
 		int cont=0;
 		int num_copy=0;
 		int num=0;
@@ -36,7 +34,7 @@ public class double_loop {
 		int minor=0;
 		String str="";
 		boolean interrupt=false;
-		JOptionPane.showMessageDialog(null, "Escribe números hasta que quieras y te mostrará los digito mayor y menor de cada número.","Intrucciones",JOptionPane.INFORMATION_MESSAGE);
+		JOptionPane.showMessageDialog(null, "Escribe números hasta que quieras y te mostrará los dígitos mayor y menor de cada número.","Intrucciones",JOptionPane.INFORMATION_MESSAGE);
 		while(interrupt==false) {
 			num=validators.validator_int("Introduce un número:\nPara salir introduce el '-1'. ","Introducir número");
 			if(num == -1) {
@@ -62,8 +60,8 @@ public class double_loop {
 			}//end if
 		}//end while
 		JOptionPane.showMessageDialog(null, str,"Resultado",JOptionPane.INFORMATION_MESSAGE);
-	}//end Interruptor_Digitos_Mayor_Menor
-	public static void Interruptor_Mayor_Menor_Media() {
+	}//end Interrupt_Digit_Major_Minor
+	public static void Interrupt_Major_Minor_AVG() {
 		int num1=0;
 		int cont=0;
 		int major=0;
@@ -97,8 +95,8 @@ public class double_loop {
 		avg=single_loop.average(sum, cont_avg);
 		str+="La media es "+avg+"."; 
 		JOptionPane.showMessageDialog(null, str,"Resultado",JOptionPane.INFORMATION_MESSAGE);
-	}//end Interruptor_Mayor_Menor_Media
-	public static void N_num_Divisores() {
+	}//end Interrupt_Major_Minor_AVG
+	public static void N_num_Div() {
 		int num1=0;
 		int num2=0;
 		int prod=1;
@@ -126,26 +124,11 @@ public class double_loop {
 			}else{
 				str_20=str_20+"El producto de los divisores de "+num2+" es menor a 20.\n";
 			}//end if
-			str="Los divisores de "+num2+" son:"+str_div+"\n"+str+"\n";
+			str="Los divisores de "+num2+" son:"+str_div+"\n"+str;
 		}//end for
-		JOptionPane.showMessageDialog(null, str,"Resultado",JOptionPane.INFORMATION_MESSAGE);
-	}//end N_num_Divisores
-	public static void N_Primeros_Impares () {
-		int cont=0;
-		int num=0;
-		int prod=1;
-		String str="";
-		while(cont<3) {
-			num=validators.validator_int("Introduce un número: ","Introducir número");
-			if((num%3)==0) {
-				prod=prod*num;
-				cont++;
-			}//end if
-		}//end while
-		str="El producto del los 3 primeros números impares es: "+prod+". \n";
-		JOptionPane.showMessageDialog(null, str,"Resultado",JOptionPane.INFORMATION_MESSAGE);
-	}//end N_Primeros_Impares
-	public static void Digitos_Posicion(){
+		JOptionPane.showMessageDialog(null, str+str_20,"Resultado",JOptionPane.INFORMATION_MESSAGE);
+	}//end N_num_Div
+	public static void Digit_Position(){
 		int cont=0;
 		int cont2=0;
 		int num_copy=0;
@@ -155,7 +138,7 @@ public class double_loop {
 		int digit=0;
 		int digit2=0;
 		String str="";
-		num=validators.validator_int("Introduce un número: ","Introducir número");
+		num=validators.validator_int("Introduce un número para divirlo en digitos: ","Introducir número");
 		cont=0;
 		num_copy=num;
 		while(num!=0){
@@ -163,7 +146,7 @@ public class double_loop {
 			num=num/10;
 			cont++;
 		}//end while
-		pos=validators.validator_range(cont,"Escribe una posición: ","Introducir posición");
+		pos=validators.validator_range(cont,"Ahora escribe la posición del dígito que quieres mostrar: ","Introducir posición");
 		num2=num_copy;
 		cont2=0;
 		while(num2!=0){
@@ -175,8 +158,8 @@ public class double_loop {
 			}//end if
 		}//end while
 		JOptionPane.showMessageDialog(null, str,"Resultado",JOptionPane.INFORMATION_MESSAGE);
-	}//end Digitos_Posicion
-	public static void Interruptor_Mayor_Repeat(){
+	}//end Digit_Position
+	public static void Interrupt_Major_Repeat(){
 		int num1=0;
 		int cont=0;
 		int major=0;
@@ -184,8 +167,9 @@ public class double_loop {
 		String str="";
 		String str2="";
 		boolean interruptor=false;
+		JOptionPane.showMessageDialog(null, "Introduce números hasta que quieras y te mostrará el mayor ingresado y las veces que se repite.","Instrucciones",JOptionPane.INFORMATION_MESSAGE);
 		while(interruptor==false){
-			num1=validators.validator_int("Introduce un número: ","Introducir número");	
+			num1=validators.validator_int("Introduce un número:\nPara salir ingresa el '-1' ","Introducir número");	
 			if(num1==-1) {
 				interruptor=true;
 			}else{
@@ -201,20 +185,21 @@ public class double_loop {
 						repeat++;
 					}//end if
 				}//end if
-				if (repeat==1) {
+				if (repeat==2) {
 					str2=" vez.";
 				}else {
 					str2=" veces.";
 				}//end if
 			}//end if
 		}//end while
-		str="El numero mayor ingresado es "+ major + " y se repite "+ (repeat) + str2+ "\n";
+		str="El numero mayor ingresado es "+ major + " y se repite "+ (repeat-1) + str2+ "\n";
 		JOptionPane.showMessageDialog(null, str,"Resultado",JOptionPane.INFORMATION_MESSAGE);
-	}//end Interruptor_Mayor_Repeat
-	public static void Perfecto_Primeros() {
+	}//end Interrupt_Major_Repeat
+	public static void Four_N_Perfects() {
 		int cont=0;
 		int sum=0;
 		String str="";
+		JOptionPane.showMessageDialog(null, "Este programa te va a mostrar los 4 primeros números perfectos.","Instrucciones",JOptionPane.INFORMATION_MESSAGE);
 		for(int i=1;cont<4;i++){
 			sum=0;
 			for(int j=1;j<=(i/2);j++){
@@ -223,19 +208,20 @@ public class double_loop {
 				}//end if
 			}//end for
 			if(sum==i){
-				str=str+"Número perfecto encontrado: "+i+"\n";
+				str=str+"Número perfecto "+(cont+1)+": "+i+".\n";
 				cont++;
 			}//end if
 		}//end for
 		JOptionPane.showMessageDialog(null, str,"Resultado",JOptionPane.INFORMATION_MESSAGE);
-	}//end Perfecto_Primeros
-	public static void DeseaContinuarMediaDivisoresImpares() {
+	}//end Four_N_Perfects
+	public static void Continue_AVG_Div_Odd() {
 		int num1=0;
 		int sum=0;
 		int cont=0;
 		int next = 0;
 		float avg = 0.0f;
 		String str= "";
+		JOptionPane.showMessageDialog(null, "Ingresa números hasta que quieras, y te mostrará la media de los divisores impares y que divisor de cada número es mayor o igual a 10.","Instrucciones",JOptionPane.INFORMATION_MESSAGE);
 		do{
 			num1=validators.validator_int("Introduce un número: ","Introducir número");
 			for(int i=1;i<=num1;i++) {
@@ -254,8 +240,8 @@ public class double_loop {
 		avg=single_loop.average(sum, cont);
 		str+="\nLa media de los divisores impares es: "+avg;
 		JOptionPane.showMessageDialog(null, str,"Resultado",JOptionPane.INFORMATION_MESSAGE);
-	}//end DeseaContinuarMediaPares
-	public static void Interruptor_2_Digitos_Impares(){
+	}//end Continue_AVG_Div_Odd
+	public static void Interrupt_2_Digits_Odd(){
 		int cont=0;
 		int num_copy=0;
 		int num=0;
@@ -263,6 +249,7 @@ public class double_loop {
 		int prod=1;
 		String str="";
 		boolean interrupt=false;
+		JOptionPane.showMessageDialog(null, "Introduce números hasta que quieras y te mostrará el producto de los números que tengan dos dígitos impares.","Instrucciones",JOptionPane.INFORMATION_MESSAGE);
 		while(interrupt==false) {
 			num=validators.validator_int("Introduce números: \nPara salir escriba '-5'.","Introducir número");
 			if(num == -5) {
@@ -284,8 +271,8 @@ public class double_loop {
 		}//end while
 		str="El producto de los numeros que tienen dos digitos impares es "+ prod+".";
 		JOptionPane.showMessageDialog(null, str,"Resultado",JOptionPane.INFORMATION_MESSAGE);
-	}//end Interruptor_Digitos_Mayor_Menor
-	public static void N_primeros_Digi_Multiplo_media(){
+	}//end Interrupt_2_Digits_Odd
+	public static void N_first_Digit_Multiple_AVG(){
 		int cont=0;
 		int num=0;
 		int digit=0;
@@ -293,6 +280,7 @@ public class double_loop {
 		int cont2=0;
 		float avg=0.0f;
 		String str="";
+		JOptionPane.showMessageDialog(null, "Ingresa 5 números y te mostrará la media de todos los dígitos múltiplos de 4.","Instrucciones",JOptionPane.INFORMATION_MESSAGE);
 		while(cont<5) {
 			cont++;
 			num=validators.validator_int("Introduce un número: ","Introducir número");
@@ -311,8 +299,8 @@ public class double_loop {
 		}//end while
 		str="La media de todos los dígitos múltiplos de 4 de los números ingresados es "+avg;
 		JOptionPane.showMessageDialog(null, str,"Resultado",JOptionPane.INFORMATION_MESSAGE);
-	}//end N_primeros_Digi_Multiplo_media
-	public static void N_num_Div_Impar_Media(){
+	}//end N_first_Digit_Multiple_AVG
+	public static void N_num_Div_Odd_AVG(){
 		int num1=0;
 		int num2=0;
 		int cont=0;
@@ -320,9 +308,10 @@ public class double_loop {
 		float sum=0.0f;
 		float avg=0.0f;
 		String str="";
+		JOptionPane.showMessageDialog(null, "Escribe cuantos números quieres introducir y luego de los números ingresados se mostrará la media de los que tienen 3 divisores impares.","Instrucciones",JOptionPane.INFORMATION_MESSAGE);
 		num1=validators.validator_int("¿Cúantos números deseas introducir? ","Introduce número");
 		for(int i=0;i<num1;i++) {
-			num2=validators.validator_int("Introduce un número: ","Introducir números");
+			num2=validators.validator_int("Recomendación:'Los tres primeros que tienen 3 divisores impares son: 9,25 y 49.'\nIntroduce un número: ","Introducir números");
 			cont=0;
 			for(int j=1;j<=num2;j++){
 				if((num2%j)==0){
@@ -339,5 +328,5 @@ public class double_loop {
 		}//end for
 		str="La media de los números que tienen 3 divisiores impares es "+avg;
 		JOptionPane.showMessageDialog(null, str,"Resultado",JOptionPane.INFORMATION_MESSAGE);
-	}//end N_num_Div_Impar_Media
-}//end class doubles
+	}//end N_num_Div_Odd_AVG
+}//end class double_loop

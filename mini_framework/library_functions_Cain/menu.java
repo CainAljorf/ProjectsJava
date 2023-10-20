@@ -14,7 +14,6 @@ public class menu {
 				"9",
 				"10",
 				"11",
-				"12",
 				"Cerrar"};
 		int menu_main;
 		boolean validator=true;
@@ -62,9 +61,6 @@ public class menu {
 				case 10:
 					menu_sec(menu_main);
 					break;
-				case 11:
-					menu_sec(menu_main);
-					break;
 				case 12:
 					validator=false;
 					break;
@@ -92,40 +88,37 @@ public class menu {
 				case 0:
 					switch (option){
 						case 0:
-							double_loop.DeseaContinuarMediaPares();
+							double_loop.Continue_AVG_Even();
 							break;
 						case 1:
-							double_loop.Interruptor_Digitos_Mayor_Menor();
+							double_loop.Interrupt_Digit_Major_Minor();
 							break;
 						case 2:
-							double_loop.Interruptor_Mayor_Menor_Media();
+							double_loop.Interrupt_Major_Minor_AVG();
 							break;
 						case 3:
-							double_loop.N_num_Divisores();
+							double_loop.N_num_Div();
 							break;
 						case 4:
-							double_loop.N_Primeros_Impares();
+							double_loop.Digit_Position();
 							break;
 						case 5:
-							double_loop.Digitos_Posicion();
+							double_loop.Interrupt_Major_Repeat();
 							break;
 						case 6:
-							double_loop.Interruptor_Mayor_Repeat();
+							double_loop.Four_N_Perfects();
 							break;
 						case 7:
-							double_loop.Perfecto_Primeros();
+							double_loop.Continue_AVG_Div_Odd();
 							break;
 						case 8:
-							double_loop.DeseaContinuarMediaDivisoresImpares();
+							double_loop.Interrupt_2_Digits_Odd();
 							break;
 						case 9:
-							double_loop.Interruptor_2_Digitos_Impares();
+							double_loop.N_first_Digit_Multiple_AVG();
 							break;
 						case 10:
-							double_loop.N_primeros_Digi_Multiplo_media();
-							break;
-						case 11:
-							double_loop.N_num_Div_Impar_Media();
+							double_loop.N_num_Div_Odd_AVG();
 							break;
 					}//end switch
 					break;

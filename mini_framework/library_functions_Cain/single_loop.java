@@ -1,7 +1,21 @@
 package library_functions_Cain;
 import javax.swing.JOptionPane;
-
 public class single_loop {
+	public static void N_First_Odd () {
+		int cont=0;
+		int num=0;
+		int prod=1;
+		String str="";
+		while(cont<3) {
+			num=validators.validator_int("Introduce un número: ","Introducir número");
+			if((num%3)==0) {
+				prod=prod*num;
+				cont++;
+			}//end if
+		}//end while
+		str="El producto del los 3 primeros números impares es: "+prod+". \n";
+		JOptionPane.showMessageDialog(null, str,"Resultado",JOptionPane.INFORMATION_MESSAGE);
+	}//end N_First_Odd
 	public static void N_numbers(){
 		int num=0;
 		String str="";
@@ -46,8 +60,8 @@ public class single_loop {
 			avg=(float)(sum/cont);
 		}//end if
 		return avg;
-	}//end media
-	public static int major_minor(int num) {
+	}//end average
+	public static int Major_Minor(int num) {
 		int cont=0;
 		int major=0;
 		int minor=0;
