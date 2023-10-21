@@ -12,11 +12,10 @@ public class product {
 	private String f_devolucion;
 	private String f_recogida;
 	private int n_dias_recogida;
-	private int n_dias_recogida1;
 	private int n_dias_devolucion;
 	public product(String iD_product, float price, float peso, int stock, String color, float dimension,
 			String f_compra, String f_entrega, int n_dias_entrega, String f_devolucion, String f_recogida,
-			int n_dias_recogida, int n_dias_recogida1, int n_dias_devolucion) {
+			int n_dias_recogida, int n_dias_devolucion) {
 		super();
 		this.ID_product = iD_product;
 		this.price = price;
@@ -30,7 +29,6 @@ public class product {
 		this.f_devolucion = f_devolucion;
 		this.f_recogida = f_recogida;
 		this.n_dias_recogida = n_dias_recogida;
-		this.n_dias_recogida1 = n_dias_recogida1;
 		this.n_dias_devolucion = n_dias_devolucion;
 	}
 	public String getID_product() {
@@ -105,12 +103,6 @@ public class product {
 	public void setN_dias_recogida(int n_dias_recogida) {
 		this.n_dias_recogida = n_dias_recogida;
 	}
-	public int getN_dias_recogida1() {
-		return n_dias_recogida1;
-	}
-	public void setN_dias_recogida1(int n_dias_recogida1) {
-		this.n_dias_recogida1 = n_dias_recogida1;
-	}
 	public int getN_dias_devolucion() {
 		return n_dias_devolucion;
 	}
@@ -122,7 +114,6 @@ public class product {
 		return "product [ID_product=" + ID_product + ", price=" + price + ", peso=" + peso + ", stock=" + stock
 				+ ", color=" + color + ", dimension=" + dimension + ", f_compra=" + f_compra + ", f_entrega="
 				+ f_entrega + ", n_dias_entrega=" + n_dias_entrega + ", f_devolucion=" + f_devolucion + ", f_recogida="
-				+ f_recogida + ", n_dias_recogida=" + n_dias_recogida + ", n_dias_recogida1=" + n_dias_recogida1
-				+ ", n_dias_devolucion=" + n_dias_devolucion + "]";
+				+ f_recogida + ", n_dias_recogida=" + n_dias_recogida + ", n_dias_devolucion=" + n_dias_devolucion + "]";
 	}
 }

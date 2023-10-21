@@ -2,6 +2,7 @@ package objects;
 import javax.swing.JOptionPane;
 public class menu {
 	public static int menu_main() {
+		product P1 = null;
 		String[]buttons_main={
 				"Create",
 				"Read",
@@ -22,14 +23,28 @@ public class menu {
 					buttons_main[0]);
 			switch(menu_main){
 				case 0:
-					CRUD_Products.create();
+					P1=CRUD_Products.create();
 					break;
 				case 1:
-					CRUD_Products.read(null);
+					if(P1!=null) {
+						CRUD_Products.read(P1);
+					}else {
+						JOptionPane.showMessageDialog(null,"No se ha podido encontrar el producto.","Error",JOptionPane.ERROR_MESSAGE);
+					}//end if
 					break;
 				case 2:
+					if(P1!=null) {
+						P1=CRUD_Products.update(P1);
+					}else {
+						JOptionPane.showMessageDialog(null,"No se ha podido encontrar el producto que quieres actualizar.","Error",JOptionPane.ERROR_MESSAGE);
+					}//end if
 					break;
 				case 3:
+					if(P1!=null) {
+						P1=CRUD_Products.delete(null);
+					}else {
+						JOptionPane.showMessageDialog(null,"No hay ningún registro que puedas eliminar.","Error",JOptionPane.ERROR_MESSAGE);
+					}//end if
 					break;
 				case 4:
 					validator=false;
@@ -40,34 +55,4 @@ public class menu {
 		}while(validator==true);
 		return menu_main;
 	}//end menu_main
-	public static int menu_sec() {
-		int menu_sec;
-		boolean validator=true;
-		String[]buttons_sec={"Editar ID","Editar Precio"};
-		do{
-			menu_sec=JOptionPane.showOptionDialog(
-					null,
-					"¿Que desea hacer?",
-					"Información",
-					0,
-					JOptionPane.QUESTION_MESSAGE,
-					null,
-					buttons_sec,
-					buttons_sec[0]);
-			switch(menu_sec){
-				case 0:
-					switch (menu_sec){
-						
-					}//end switch
-					break;
-				case 1:
-					validator=true;
-					break;
-				default:	
-					validator=false;
-					break;
-			}//end switch
-		}while(menu_sec==0);
-		return menu_sec;
-	}//end menu_sec
 }//end class menu
