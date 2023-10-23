@@ -3,29 +3,46 @@ import javax.swing.JOptionPane;
 public class CRUD_Products {
 	public static product create() {
 		product P1 = null;
-		String ID_product=validators.validator_string("Ingresa el ID del producto.", "Ingresar ID");
-		float price=validators.validator_float("Ingresa el precio del producto.", "Ingresar precio");
-		float peso=validators.validator_float("Ingresa el peso del producto.", "Ingresar peso");
-		int stock=validators.validator_int("Ingresa el stock del producto.", "Ingresar stock");
-		String color=validators.validator_string("Ingresa el color del producto.", "Ingresar color");
-		float dimension=validators.validator_float("Ingresa la dimension del producto.", "Ingresar dimension");
-		String f_compra=validators.validator_string("Ingresa la fecha de compra del producto.", "Ingresar fecha compra");
-		String f_entrega=validators.validator_string("Ingresa la fecha de entrega del producto.", "Ingresar fecha entrega");
-		int n_dias_entrega=validators.validator_int("Ingresa el número de días que tardará en entregarse.", "Ingresar los días");
-		String f_devolucion=validators.validator_string("Ingresa la fecha de devolución.", "Ingresar fecha devolución");
-		String f_recogida=validators.validator_string("Ingresa la fecha de recogida.", "Ingresar fecha recogida");
-		int n_dias_recogida=validators.validator_int("Ingresa el número de días que tardará en recogerse.", "Ingresar recogida");
-		int n_dias_devolucion=validators.validator_int("Ingresa el número de días que quedan para la devolución.", "Ingresar devolución");
-		P1=new product(ID_product,price,peso,stock,color,dimension,f_compra,f_entrega,n_dias_entrega,
-				f_devolucion,f_recogida,n_dias_recogida,n_dias_devolucion);
+//		String ID_product=validators.validator_string("Ingresa el ID del producto.", "Ingresar ID");
+//		float price=validators.validator_float("Ingresa el precio del producto.", "Ingresar precio");
+//		float peso=validators.validator_float("Ingresa el peso del producto.", "Ingresar peso");
+//		int stock=validators.validator_int("Ingresa el stock del producto.", "Ingresar stock");
+//		String color=validators.validator_string("Ingresa el color del producto.", "Ingresar color");
+//		float dimension=validators.validator_float("Ingresa la dimension del producto.", "Ingresar dimension");
+//		String f_compra=validators.validator_string("Ingresa la fecha de compra del producto.", "Ingresar fecha compra");
+//		String f_entrega=validators.validator_string("Ingresa la fecha de entrega del producto.", "Ingresar fecha entrega");
+//		int n_dias_entrega=validators.validator_int("Ingresa el número de días que tardará en entregarse.", "Ingresar los días");
+//		String f_devolucion=validators.validator_string("Ingresa la fecha de devolución.", "Ingresar fecha devolución");
+//		String f_recogida=validators.validator_string("Ingresa la fecha de recogida.", "Ingresar fecha recogida");
+//		int n_dias_recogida=validators.validator_int("Ingresa el número de días que tardará en recogerse.", "Ingresar recogida");
+//		int n_dias_devolucion=validators.validator_int("Ingresa el número de días que quedan para la devolución.", "Ingresar devolución");
+//		P1=new product(ID_product,price,peso,stock,color,dimension,f_compra,f_entrega,n_dias_entrega,
+//				f_devolucion,f_recogida,n_dias_recogida,n_dias_devolucion);
+		P1=new product("1",1,1,1,"red",5,"5/04/2012","15/04/2012",10,
+				"30/04/2012","20/04/2012",10,15);
 		JOptionPane.showMessageDialog(null, "Producto creado correctamenmte.","Felicidades", JOptionPane.INFORMATION_MESSAGE);
 		return P1;
 	}
 	public static void read(product P1) {
-			JOptionPane.showMessageDialog(null,P1.toString(),"Resultado",JOptionPane.INFORMATION_MESSAGE);
+		int opt=0;
+		JOptionPane.showMessageDialog(null,"Elige que atributo quieres ver.","Información",JOptionPane.INFORMATION_MESSAGE);
+		if (P1 != null) {
+			String[]buttons_sec={"ID","Precio","Peso","Stock","Color","Dimens","FCompra","F Entr","N Entr","F Dev","NRecog","N Dev"};
+			opt=JOptionPane.showOptionDialog(
+					null,
+					"Elige el atributo que quieras mostrar.",
+					"Información",
+					0,
+					JOptionPane.QUESTION_MESSAGE,
+					null,
+					buttons_sec,
+					buttons_sec[0]);
+			JOptionPane.showMessageDialog(null,P1.toString(opt),"Resultado",JOptionPane.INFORMATION_MESSAGE);
+		}
 	}
 	public static product update(product P1) {
 		int menu_sec=0;
+		String str="";
 		JOptionPane.showMessageDialog(null,"Elige que atributo quieres modificar.","Información",JOptionPane.INFORMATION_MESSAGE);
 		if (P1 != null) {
 			String[]buttons_sec={"ID","Precio","Peso","Stock","Color","Dimens","FCompra","F Entr","N Entr","F Dev","NRecog","N Dev"};
@@ -87,11 +104,18 @@ public class CRUD_Products {
 				int n_dias_devolucion=validators.validator_int("Ingresa el número de días que quedan para la devolución.", "Ingresar devolución");
 				P1.setN_dias_devolucion(n_dias_devolucion);
 				break;
+			default:
+				break;
 			}//end switch
 		}else {
 			JOptionPane.showMessageDialog(null,"No existen productos que se puedan modificar.","Error",JOptionPane.ERROR_MESSAGE);
 		}//end if
-		JOptionPane.showMessageDialog(null,"Registro actualizado correctamente.","Felicidades",JOptionPane.INFORMATION_MESSAGE);
+		if(menu_sec<0 && menu_sec>11) {
+			str="Registro actualizado correctamente.";
+		}else {
+			str="Saliendo al menú principal.";
+		}
+		JOptionPane.showMessageDialog(null,str,"Resultado",JOptionPane.INFORMATION_MESSAGE);
 		return P1;
 	}
 	public static product delete(product P1) {
