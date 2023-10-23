@@ -111,9 +111,23 @@ public class product {
 	}
 	@Override
 	public String toString() {
-		return "product [ID_product=" + ID_product + ", price=" + price + ", peso=" + peso + ", stock=" + stock
-				+ ", color=" + color + ", dimension=" + dimension + ", f_compra=" + f_compra + ", f_entrega="
-				+ f_entrega + ", n_dias_entrega=" + n_dias_entrega + ", f_devolucion=" + f_devolucion + ", f_recogida="
-				+ f_recogida + ", n_dias_recogida=" + n_dias_recogida + ", n_dias_devolucion=" + n_dias_devolucion + "]";
+		String str="";
+        str=str+"ID del producto: " + this.getID_product() + "\n";
+        str=str+"Precio del producto : " + this.getPrice() + "\n";
+        str=str+"Peso del producto : " + this.getPeso() + "\n";
+        str=str+"Stock del producto: " + this.getStock() + "\n";
+        str=str+"Color del producto: " + this.getColor() + "\n";
+        str=str+"Dimensiones del producto : " + this.getDimension() + "\n";
+        str=str+"Fecha de compra del producto : " + this.getF_compra() + "\n";
+        str=str+"Fecha de entrega del producto : " + this.getF_entrega() + "\n";
+        str=str+"Número de días de entrega : " + this.getN_dias_entrega() + "\n";
+        str=str+"Fecha de devolución : " + this.getF_devolucion() + "\n";
+        str=str+"Fecha de recogida del producto : " + this.getF_recogida() + "\n";
+        str=str+"Número de días de recogida del producto: " + this.getN_dias_recogida() + "\n";
+        str=str+"Número de días de devolución: " + this.getN_dias_devolucion();
+    return str;
 	}
+
+
+	
 }
