@@ -1,7 +1,0 @@
-package objects;
-
-public class main {
-	public static void main(String[] args) {
-		validators.validator_string(null, null);
-	}
-}

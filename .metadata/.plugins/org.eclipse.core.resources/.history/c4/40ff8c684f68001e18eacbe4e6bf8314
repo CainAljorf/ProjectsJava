@@ -1,9 +1,0 @@
-package libreria_funciones_Cain;
-import javax.swing.JOptionPane;
-import funciones.validar_int;
-
-public class main {
-	public static void main(String[] args) {
-		menu.menu_principal();
-	}
-}
